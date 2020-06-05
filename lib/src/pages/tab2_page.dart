@@ -41,11 +41,12 @@ class Tab2Page extends StatelessWidget {
   }
 }
 
+
 class _ListaCategorias extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
+//Para obtener la lista de categorias usamos los providers
     final categories = Provider.of<NewsService>(context).categories;
 
     return Container(
@@ -55,6 +56,8 @@ class _ListaCategorias extends StatelessWidget {
         physics: BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemCount: categories.length,
+
+        //Ordenamos las categorias en la parte superior 
         itemBuilder: (BuildContext context, int index) {
 
           final cName = categories[index].name;

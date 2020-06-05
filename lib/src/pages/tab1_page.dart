@@ -3,7 +3,7 @@ import 'package:noticias_mundiales/src/services/news_service.dart';
 import 'package:noticias_mundiales/src/widgets/lista_noticias.dart';
 import 'package:provider/provider.dart';
 
-
+//PARA EL PRIMER TAB
 class Tab1Page extends StatefulWidget {
 
   @override
@@ -13,7 +13,7 @@ class Tab1Page extends StatefulWidget {
 class _Tab1PageState extends State<Tab1Page> with AutomaticKeepAliveClientMixin {
   @override
   Widget build(BuildContext context) {
-
+    
     final headlines = Provider.of<NewsService>(context).headlines;
 
     return Scaffold(

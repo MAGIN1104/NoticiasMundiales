@@ -16,9 +16,10 @@ class ListaNoticias extends StatelessWidget {
     return ListView.builder(
       itemCount: this.noticias.length,
       itemBuilder: (BuildContext context, int index) {
-
-
-        return _Noticia( noticia: this.noticias[index], index: index );
+        return _Noticia( 
+                        noticia: this.noticias[index],
+                        index: index 
+                        );
      }
     );
   }
@@ -40,6 +41,7 @@ class _Noticia extends StatelessWidget {
     return Column(
       children: <Widget>[
          SizedBox( height: 20 ),
+
         _TarjetaTopBar( noticia, index ),
 
         _TarjetaTitulo( noticia ),
@@ -90,15 +92,17 @@ class _TarjetaImagen extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric( vertical: 10 ),
       child: ClipRRect(
-
+        //CLIPPECT NOS AYUDA A REALIZAR CORTES CON LOS WIDGETS
         borderRadius: BorderRadius.all(Radius.circular(50)),
         //borderRadius: BorderRadius.only( topLeft: Radius.circular(50), bottomRight: Radius.circular(50) ),
         child: Container(
           child: ( noticia.urlToImage != null ) 
+          //Si la noticia es distinto de null muestra la imagen
               ? FadeInImage(
                   placeholder: AssetImage( 'assets/img/spin.gif' ), 
                   image: NetworkImage( noticia.urlToImage )
                 )
+            //De lo contrario mandamos la imagen  de imagenes no disponibles
               : Image( image: AssetImage('assets/img/no-image.png'), )
         ),
       ),
@@ -122,7 +126,6 @@ class _TarjetaTitulo extends StatelessWidget {
     );
   }
 }
-
 
 
 

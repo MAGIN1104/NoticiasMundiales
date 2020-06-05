@@ -17,15 +17,11 @@ class TabsPage extends StatelessWidget {
     );
   }
 }
-
+//LA CLASE NAVEGACION REALIZA LA NAVEGACION DE LAS PAGINAS 
 class _Navegacion extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
-
     final navegacionModel = Provider.of<_NavegacionModel>(context);
-
-
     return BottomNavigationBar(
       currentIndex: navegacionModel.paginaActual,
       onTap: (i) => navegacionModel.paginaActual = i,
@@ -37,8 +33,8 @@ class _Navegacion extends StatelessWidget {
   }
 }
 
+//ESTAS SON LAS PAGINAS QUE VISUALIZAREMOS CUANDO LE DEMOS CLICK
 class _Paginas extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
 
@@ -47,11 +43,11 @@ class _Paginas extends StatelessWidget {
     return PageView(
       controller: navegacionModel.pageController,
       // physics: BouncingScrollPhysics(),
+      //NeverScroll evita a que el scroll que viene por defecto
       physics: NeverScrollableScrollPhysics(),
       children: <Widget>[
 
         Tab1Page(),
-
         Tab2Page()
 
       ],
